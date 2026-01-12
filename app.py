@@ -7,9 +7,9 @@ app = Flask(__name__)
 app.secret_key = "fitnation_secret_key"
 
 # Home page - shows the landing page
-@app.route('/')
+@app.route("/", methods=["GET", "HEAD"])
 def home():
-    return render_template('landing.html')
+    return render_template("landing.html")
 
 # Engine page - where users fill the fitness form
 @app.route('/engine')
@@ -30,3 +30,4 @@ def send_static(path):
 if __name__ == '__main__':
     port = int(os.environ.get("PORT", 5000))
     app.run(debug=True, host='0.0.0.0', port=port)
+
