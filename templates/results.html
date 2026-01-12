@@ -5,8 +5,10 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Dashboard | Fit-Nation</title>
+
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800;900&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="{{ url_for('static', filename='css/results.css') }}">
+
+    <link rel="stylesheet" href="{{ url_for('static', filename='results.css') }}">
 </head>
 
 <body class="results-dashboard">
@@ -44,9 +46,10 @@
             </div>
         </header>
 
-        <!-- Main content area with all the analysis cards -->
+        <!-- Main content area -->
         <main class="dashboard-content">
-            <!-- Card 1: Fitness Summary with BMI and goal -->
+
+            <!-- Card 1: Fitness Summary -->
             <section class="glass-card summary-card animate-in" style="animation-delay: 0.1s">
                 <div class="glass-card-header">
                     <span class="card-title">Fitness Summary</span>
@@ -64,16 +67,16 @@
                     </div>
 
                     <div class="bottleneck-highlight">
-                        <span style="font-size: 0.75rem; font-weight: 700; color: var(--warning-accent)">PRIMARY
-                            BOTTLENECK</span>
-                        <p id="bottleneckTitle"
-                            style="margin-top: 0.25rem; color: var(--text-primary); font-weight: 600">--</p>
-                        <p id="bottleneckMsg" style="margin-top: 0.1rem; line-height: 1.4">--</p>
+                        <span style="font-size: 0.75rem; font-weight: 700; color: var(--warning-accent)">
+                            PRIMARY BOTTLENECK
+                        </span>
+                        <p id="bottleneckTitle" style="margin-top: 0.25rem; font-weight: 600;">--</p>
+                        <p id="bottleneckMsg" style="margin-top: 0.1rem; line-height: 1.4;">--</p>
                     </div>
                 </div>
             </section>
 
-            <!-- Card 2: Time and Consistency circles -->
+            <!-- Card 2: Time & Consistency -->
             <section class="glass-card visualization-card animate-in" style="animation-delay: 0.2s">
                 <div class="glass-card-header">
                     <span class="card-title">Time & Consistency Baseline</span>
@@ -83,13 +86,13 @@
                         <div id="timeCircle" class="circle-progress" style="--val: 0">
                             <span id="timeText">--m</span>
                         </div>
-                        <p style="font-size: 0.8rem">Available Time</p>
+                        <p>Available Time</p>
                     </div>
                     <div class="visual-item">
                         <div id="consistencyCircle" class="circle-progress" style="--val: 0">
                             <span id="consistencyText">--</span>
                         </div>
-                        <p style="font-size: 0.8rem">Commitment Score</p>
+                        <p>Commitment Score</p>
                     </div>
                 </div>
             </section>
@@ -101,16 +104,11 @@
                     <span class="icon-pulse">🥗</span>
                 </div>
                 <div class="nutrition-content">
-                    <div class="nutrition-hero">
-                        <div class="diet-type-badge">
-                            <span class="diet-label">RECOMMENDED PROTOCOL</span>
-                            <span id="dietTypeText" class="diet-value">-- Focus</span>
-                        </div>
+                    <div class="diet-type-badge">
+                        <span class="diet-label">RECOMMENDED PROTOCOL</span>
+                        <span id="dietTypeText" class="diet-value">-- Focus</span>
                     </div>
-
-                    <div id="nutritionList" class="nutrition-grid">
-                    </div>
-
+                    <div id="nutritionList" class="nutrition-grid"></div>
                     <div class="nutrition-alert">
                         <span class="alert-icon">⚠️</span>
                         <p id="nutritionAlertMsg">--</p>
@@ -118,69 +116,63 @@
                 </div>
             </section>
 
-            <!-- Card 4: Focus Priority banner -->
+            <!-- Card 4: Focus Priority -->
             <section class="glass-card focus-card animate-in" style="animation-delay: 0.35s">
-                <div class="focus-line-content">
-                    <span class="focus-title">IMMEDIATE FOCUS PRIORITY</span>
-                    <p class="focus-value">Increase daily movement outside workouts (walking, steps, general activity).
-                    </p>
-                </div>
+                <span class="focus-title">IMMEDIATE FOCUS PRIORITY</span>
+                <p class="focus-value">
+                    Increase daily movement outside workouts (walking, steps, general activity).
+                </p>
             </section>
 
-            <!-- Card 5: Decision Status Panel (fitness paths) -->
+            <!-- Card 5: Decision Status Panel -->
             <section class="glass-card paths-card animate-in" style="animation-delay: 0.4s">
                 <div class="glass-card-header">
                     <span class="card-title">Decision Status Panel</span>
                     <span class="badge badge-green">LIVE SYSTEM</span>
                 </div>
-                <div id="pathsPanel" class="paths-panel">
-                </div>
+                <div id="pathsPanel" class="paths-panel"></div>
             </section>
 
-            <!-- Card 6: Avoid List (things not to do) -->
+            <!-- Card 6: Avoid List -->
             <section class="glass-card not-to-do-card animate-in" style="animation-delay: 0.5s">
                 <div class="glass-card-header">
                     <span class="card-title" style="color: var(--danger-accent)">⛔ CRITICAL: AVOID LIST</span>
                     <span class="badge badge-red">STRICT</span>
                 </div>
-                <div id="avoidGrid" class="avoid-grid">
-                </div>
+                <div id="avoidGrid" class="avoid-grid"></div>
             </section>
 
-            <!-- Card 7: Intelligence Layer (decision trace) -->
+            <!-- Card 7: Intelligence Layer -->
             <section class="glass-card trace-card animate-in" style="animation-delay: 0.6s">
-                <div class="trace-header glass-card-header">
+                <div class="glass-card-header">
                     <span class="card-title">Intelligence Layer: How This Decision Was Made</span>
                 </div>
-                <div id="traceContent" class="trace-content">
-                </div>
+                <div id="traceContent" class="trace-content"></div>
             </section>
 
-            <!-- Card 8: Myth Breaker section -->
+            <!-- Card 8: Myth Breaker -->
             <section class="glass-card myths-card animate-in" style="animation-delay: 0.65s">
                 <div class="glass-card-header">
                     <span class="card-title">Myth Breaker: Truth vs Hype</span>
                     <span class="badge badge-amber">HONESTY</span>
                 </div>
-                <div id="mythsGrid" class="myths-grid">
-                </div>
+                <div id="mythsGrid" class="myths-grid"></div>
             </section>
 
-            <!-- Card 9: Sustainable Daily Structure (routine) -->
+            <!-- Card 9: Sustainable Routine -->
             <section class="glass-card animate-in"
-                style="grid-column: span 12; background: linear-gradient(90deg, rgba(0, 242, 254, 0.05), rgba(79, 172, 238, 0.05)); animation-delay: 0.7s">
+                style="grid-column: span 12; animation-delay: 0.7s">
                 <div class="glass-card-header">
                     <span class="card-title">Sustainable Daily Structure (Not a Plan)</span>
                 </div>
-                <h2 id="routineText" style="font-size: 1.5rem; margin-bottom: 0.5rem">--</h2>
-                <div id="lifestyleWarnings" class="lifestyle-warnings">
-                </div>
+                <h2 id="routineText">--</h2>
+                <div id="lifestyleWarnings" class="lifestyle-warnings"></div>
             </section>
+
         </main>
     </div>
 
-    <!-- JavaScript file that populates all the data -->
-    <script src="{{ url_for('static', filename='js/main.js') }}"></script>
+    <script src="{{ url_for('static', filename='main.js') }}"></script>
 </body>
 
 </html>
