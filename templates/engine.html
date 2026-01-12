@@ -5,14 +5,15 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Fit-Nation | Fitness Decision Engine</title>
-    <link rel="stylesheet" href="{{ url_for('static', filename='css/engine.css') }}">
+
+    <link rel="stylesheet" href="{{ url_for('static', filename='engine.css') }}">
+
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&display=swap" rel="stylesheet">
 </head>
 
 <body class="engine-page">
-    <!-- Main container for the page -->
     <div class="full-screen-container">
-        <!-- Header with logo and back button -->
+
         <header class="engine-header">
             <a href="/" class="back-link">← Back to Home</a>
             <h1 class="logo">FIT-<span>NATION</span></h1>
@@ -21,15 +22,15 @@
 
         <main class="engine-main">
             <div class="centered-form-card">
-                <!-- Fitness analysis form - data is processed by JavaScript -->
                 <form id="fitnessForm">
                     <div class="form-grid">
-                        <!-- Basic body information -->
+
                         <section class="basic-info">
                             <div class="input-group">
                                 <label>Age</label>
                                 <input type="number" name="age" placeholder="e.g. 25" required>
                             </div>
+
                             <div class="input-group-split">
                                 <div class="input-group">
                                     <label>Height (cm)</label>
@@ -42,12 +43,12 @@
                             </div>
                         </section>
 
-                        <!-- Lifestyle and sleep information -->
                         <section class="lifestyle-info">
                             <div class="input-group">
                                 <label>Sleep (Hours/Day)</label>
                                 <input type="number" name="sleep" placeholder="e.g. 7" step="0.5" required>
                             </div>
+
                             <div class="input-group">
                                 <label>Daily Activity</label>
                                 <select name="activity" required>
@@ -59,7 +60,6 @@
                             </div>
                         </section>
 
-                        <!-- Time and diet constraints -->
                         <section class="constraints-info">
                             <div class="input-group">
                                 <label>Time Available (Min/Day)</label>
@@ -70,6 +70,7 @@
                                     <option value="90">90 Minutes</option>
                                 </select>
                             </div>
+
                             <div class="input-group">
                                 <label>Food Type</label>
                                 <select name="food" required>
@@ -81,7 +82,6 @@
                             </div>
                         </section>
 
-                        <!-- Fitness goal and consistency -->
                         <section class="goal-info">
                             <div class="input-group">
                                 <label>Current Goal</label>
@@ -92,6 +92,7 @@
                                     <option value="Maintain">Maintain (General Fitness)</option>
                                 </select>
                             </div>
+
                             <div class="input-group">
                                 <label>Past Consistency</label>
                                 <select name="consistency" required>
@@ -101,9 +102,9 @@
                                 </select>
                             </div>
                         </section>
+
                     </div>
 
-                    <!-- Submit button -->
                     <div class="engine-btn-group">
                         <button type="submit" class="btn-generate">
                             Submit
@@ -114,8 +115,7 @@
         </main>
     </div>
 
-    <!-- JavaScript file that handles form submission and analysis -->
-    <script src="{{ url_for('static', filename='js/main.js') }}"></script>
+    <script src="{{ url_for('static', filename='main.js') }}"></script>
 </body>
 
 </html>
