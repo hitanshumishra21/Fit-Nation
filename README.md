@@ -1,4 +1,4 @@
-Fit-Nation: The Brutally Honest Fitness Engine → https://fit-nation-1-exxc.onrender.com
+Fit-Nation: The Brutally Honest Fitness Engine
 
 What is Fit-Nation?
 
