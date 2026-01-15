@@ -1,0 +1,22 @@
+[build]
+  functions = "netlify/functions"
+  publish = "."
+
+[functions]
+  node_bundler = "esbuild"
+
+[[redirects]]
+  from = "/api/*"
+  to = "/.netlify/functions/app/:splat"
+  status = 200
+
+# Optional: clean URLs for engine.html -> /engine
+[[redirects]]
+  from = "/engine"
+  to = "/engine.html"
+  status = 200
+
+[[redirects]]
+  from = "/results"
+  to = "/results.html"
+  status = 200
