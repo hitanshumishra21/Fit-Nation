@@ -1,0 +1,289 @@
+/* ===== COLOR VARIABLES ===== */
+/* These are the main colors used throughout the engine page */
+:root {
+    --primary: #c0ff00;
+    --primary-dark: #a0d600;
+    --bg-dark: #0a0a0a;
+    --text-main: #ffffff;
+    --text-dim: #a0a0a0;
+}
+
+/* ===== RESET STYLES ===== */
+/* Remove default spacing and set consistent sizing */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Inter', sans-serif;
+}
+
+/* ===== BODY STYLES ===== */
+/* Dark background with white text */
+body {
+    background-color: #050505;
+    color: var(--text-main);
+    overflow: hidden;
+    /* No scrolling on desktop */
+}
+
+/* ===== PAGE CONTAINER ===== */
+/* Centers the form on the page */
+.engine-page {
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 1rem;
+    position: relative;
+}
+
+/* ===== FORM CONTAINER ===== */
+/* Limits the width of the form */
+.full-screen-container {
+    width: 100%;
+    max-width: 650px;
+}
+
+/* ===== HEADER SECTION ===== */
+/* Logo and tagline at the top */
+.engine-header {
+    text-align: left;
+    margin-bottom: 1rem;
+}
+
+/* ===== LOGO STYLES ===== */
+/* Large bold logo text */
+.logo {
+    font-size: 2.5rem;
+    font-weight: 800;
+}
+
+/* Green color for "NATION" part of logo */
+.logo span {
+    color: var(--primary);
+}
+
+/* ===== BACK BUTTON ===== */
+/* Link to go back to home page */
+.back-link {
+    position: absolute;
+    top: 2rem;
+    left: 2rem;
+    color: var(--primary);
+    text-decoration: none;
+    font-weight: 700;
+    font-size: 1rem;
+    transition: 0.3s;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+/* Hover effect for back button */
+.back-link:hover {
+    transform: translateX(-5px);
+    /* Moves left slightly */
+    opacity: 0.8;
+    text-shadow: 0 0 10px rgba(192, 255, 0, 0.4);
+    /* Glowing effect */
+}
+
+/* ===== FORM CARD ===== */
+/* The main card containing the form */
+.centered-form-card {
+    background: #0a0a0a;
+    padding: 1.5rem;
+    border-radius: 30px;
+    border: 1px solid rgba(255, 255, 255, 0.05);
+    box-shadow: 0 30px 60px rgba(0, 0, 0, 0.5);
+    text-align: center;
+}
+
+/* ===== INPUT GROUPS ===== */
+/* Container for each input field */
+.input-group {
+    margin-bottom: 1.2rem;
+    text-align: center;
+}
+
+/* ===== LABELS ===== */
+/* Text above each input field */
+label {
+    display: block;
+    margin-bottom: 0.4rem;
+    font-weight: 600;
+    color: var(--text-dim);
+    font-size: 0.8rem;
+    text-transform: uppercase;
+    /* Makes text all caps */
+}
+
+/* ===== INPUT FIELDS ===== */
+/* Text inputs and dropdown selects */
+input,
+select {
+    width: 100%;
+    background: #1a1a1a;
+    border: 1px solid #333;
+    padding: 0.7rem;
+    border-radius: 12px;
+    color: white;
+    text-align: center;
+}
+
+/* When user clicks on an input */
+input:focus,
+select:focus {
+    border-color: var(--primary);
+    /* Green border */
+    outline: none;
+}
+
+/* ===== FORM LAYOUT ===== */
+/* Two-column grid for form sections */
+.form-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    /* Two equal columns */
+    gap: 1rem;
+    margin-bottom: 1.5rem;
+}
+
+/* Split layout for height/weight inputs */
+.input-group-split {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1rem;
+}
+
+/* ===== BUTTON CONTAINER ===== */
+/* Centers the submit button */
+.engine-btn-group {
+    display: flex;
+    gap: 1rem;
+    justify-content: center;
+}
+
+/* ===== SUBMIT BUTTON ===== */
+/* Big green submit button */
+.btn-generate {
+    width: 100%;
+    max-width: 300px;
+    padding: 1rem 2rem;
+    border-radius: 50px;
+    font-weight: 800;
+    cursor: pointer;
+    transition: 0.3s;
+    border: none;
+    background: var(--primary);
+    /* Bright green */
+    color: black;
+    font-size: 1.1rem;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+/* Button hover effect */
+.btn-generate:hover {
+    transform: translateY(-3px);
+    /* Lifts up slightly */
+    box-shadow: 0 10px 25px rgba(192, 255, 0, 0.4);
+    /* Green glow */
+    filter: brightness(1.1);
+    /* Slightly brighter */
+}
+
+/* ===== MOBILE STYLES (TABLETS AND PHONES) ===== */
+/* For screens smaller than 600px */
+@media (max-width: 600px) {
+
+    /* Allow scrolling on mobile */
+    body {
+        overflow: auto;
+    }
+
+    /* Adjust page padding */
+    .engine-page {
+        padding: 2rem 1rem;
+        align-items: flex-start;
+    }
+
+    /* Single column layout on mobile */
+    .form-grid {
+        grid-template-columns: 1fr;
+    }
+
+    /* Full width on mobile */
+    .full-screen-container {
+        max-width: 100%;
+    }
+
+    /* Move back button to normal flow */
+    .back-link {
+        position: static;
+        margin-bottom: 2rem;
+    }
+
+    /* Center header on mobile */
+    .engine-header {
+        text-align: center;
+        margin-bottom: 2rem;
+    }
+
+    /* Smaller logo on mobile */
+    .logo {
+        font-size: 2rem;
+    }
+
+    /* Stack buttons vertically */
+    .engine-btn-group {
+        flex-direction: column;
+    }
+
+    /* Full width button on mobile */
+    .btn-generate {
+        width: 100%;
+        max-width: 100%;
+    }
+
+    /* Less padding on mobile */
+    .centered-form-card {
+        padding: 1rem;
+        border-radius: 20px;
+    }
+}
+
+/* ===== VERY SMALL MOBILE STYLES ===== */
+/* For screens smaller than 360px */
+@media (max-width: 360px) {
+
+    /* Even smaller logo */
+    .logo {
+        font-size: 1.6rem;
+    }
+
+    /* Tighter padding */
+    .centered-form-card {
+        padding: 0.75rem;
+    }
+
+    /* Smaller label text */
+    .input-group label {
+        font-size: 0.7rem;
+    }
+
+    /* Smaller input fields */
+    input,
+    select {
+        padding: 0.6rem;
+        font-size: 0.85rem;
+    }
+}
+
+/* ===== PREVENT HORIZONTAL SCROLL ===== */
+/* Make sure page doesn't scroll sideways */
+html,
+body {
+    max-width: 100vw;
+    overflow-x: hidden;
+}

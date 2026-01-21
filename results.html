@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard | Fit-Nation</title>
+
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800;900&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="results.css">
+</head>
+
+<body class="results-dashboard">
+    <div class="dashboard-wrapper">
+        <header class="topbar">
+            <div class="topbar-left">
+                <div class="header-branding">
+                    <a href="/" class="header-link home-btn">
+                        <div class="home-logo-svg">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                                stroke-linecap="round" stroke-linejoin="round">
+                                <path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"></path>
+                                <polyline points="9 22 9 12 15 12 15 22"></polyline>
+                                <path d="M9 12h6" stroke-width="2.5" class="logo-accent-line"></path>
+                            </svg>
+                        </div>
+                        <span class="home-text">Home</span>
+                    </a>
+                    <h1 class="logo-small">FIT-<span>NATION</span></h1>
+                </div>
+            </div>
+
+            <div class="topbar-center">
+                <h2 style="font-weight: 700; font-size: 1.1rem; letter-spacing: 0.5px;">SESSION ANALYSIS</h2>
+            </div>
+
+            <div class="topbar-right">
+                <div id="riskLevelBadge" class="badge badge-risk" data-level="">
+                    Risk Level: <span id="riskLevelText"></span>
+                    <span class="info-icon"
+                        title="Risk is calculated based on consistency, recovery, and lifestyle constraints.">ⓘ</span>
+                </div>
+            </div>
+        </header>
+
+        <main class="dashboard-content">
+
+            <section class="glass-card summary-card animate-in" style="animation-delay: 0.1s">
+                <div class="glass-card-header">
+                    <span class="card-title">Fitness Summary</span>
+                    <span id="onTrackBadge" class="badge"></span>
+                </div>
+                <div class="summary-main">
+                    <div class="bmi-section">
+                        <span id="bmiValue" class="bmi-value">--</span>
+                        <span id="bmiCategoryLabel" class="bmi-label">BMI (--)</span>
+                    </div>
+
+                    <div class="summary-details">
+                        <p style="font-size: 0.7rem; color: var(--text-secondary); margin-top: 1rem;">PRIMARY GOAL</p>
+                        <h3 id="goalText" class="summary-goal">--</h3>
+                    </div>
+
+                    <div class="bottleneck-highlight">
+                        <span style="font-size: 0.75rem; font-weight: 700; color: var(--warning-accent)">
+                            PRIMARY BOTTLENECK
+                        </span>
+                        <p id="bottleneckTitle" style="margin-top: 0.25rem; font-weight: 600;">--</p>
+                        <p id="bottleneckMsg" style="margin-top: 0.1rem; line-height: 1.4;">--</p>
+                    </div>
+                </div>
+            </section>
+
+            <section class="glass-card visualization-card animate-in" style="animation-delay: 0.2s">
+                <div class="glass-card-header">
+                    <span class="card-title">Time & Consistency Baseline</span>
+                </div>
+                <div class="visual-grid">
+                    <div class="visual-item">
+                        <div id="timeCircle" class="circle-progress" style="--val: 0">
+                            <span id="timeText">--m</span>
+                        </div>
+                        <p>Available Time</p>
+                    </div>
+                    <div class="visual-item">
+                        <div id="consistencyCircle" class="circle-progress" style="--val: 0">
+                            <span id="consistencyText">--</span>
+                        </div>
+                        <p>Commitment Score</p>
+                    </div>
+                </div>
+            </section>
+
+            <section class="glass-card nutrition-card animate-in" style="animation-delay: 0.3s">
+                <div class="glass-card-header">
+                    <span class="card-title">Nutrition Strategy</span>
+                    <span class="icon-pulse">🥗</span>
+                </div>
+                <div class="nutrition-content">
+                    <div class="diet-type-badge">
+                        <span class="diet-label">RECOMMENDED PROTOCOL</span>
+                        <span id="dietTypeText" class="diet-value">-- Focus</span>
+                    </div>
+                    <div id="nutritionList" class="nutrition-grid"></div>
+                    <div class="nutrition-alert">
+                        <span class="alert-icon">⚠️</span>
+                        <p id="nutritionAlertMsg">--</p>
+                    </div>
+                </div>
+            </section>
+
+            <section class="glass-card focus-card animate-in" style="animation-delay: 0.35s">
+                <span class="focus-title">IMMEDIATE FOCUS PRIORITY</span>
+                <p class="focus-value">
+                    Increase daily movement outside workouts (walking, steps, general activity).
+                </p>
+            </section>
+
+            <section class="glass-card paths-card animate-in" style="animation-delay: 0.4s">
+                <div class="glass-card-header">
+                    <span class="card-title">Decision Status Panel</span>
+                    <span class="badge badge-green">LIVE SYSTEM</span>
+                </div>
+                <div id="pathsPanel" class="paths-panel"></div>
+            </section>
+
+            <section class="glass-card not-to-do-card animate-in" style="animation-delay: 0.5s">
+                <div class="glass-card-header">
+                    <span class="card-title" style="color: var(--danger-accent)">⛔ CRITICAL: AVOID LIST</span>
+                    <span class="badge badge-red">STRICT</span>
+                </div>
+                <div id="avoidGrid" class="avoid-grid"></div>
+            </section>
+
+            <section class="glass-card trace-card animate-in" style="animation-delay: 0.6s">
+                <div class="glass-card-header">
+                    <span class="card-title">Intelligence Layer: How This Decision Was Made</span>
+                </div>
+                <div id="traceContent" class="trace-content"></div>
+            </section>
+
+            <section class="glass-card myths-card animate-in" style="animation-delay: 0.65s">
+                <div class="glass-card-header">
+                    <span class="card-title">Myth Breaker: Truth vs Hype</span>
+                    <span class="badge badge-amber">HONESTY</span>
+                </div>
+                <div id="mythsGrid" class="myths-grid"></div>
+            </section>
+
+            <section class="glass-card animate-in" style="grid-column: span 12; animation-delay: 0.7s">
+                <div class="glass-card-header">
+                    <span class="card-title">Sustainable Daily Structure (Not a Plan)</span>
+                </div>
+                <h2 id="routineText">--</h2>
+                <div id="lifestyleWarnings" class="lifestyle-warnings"></div>
+            </section>
+
+        </main>
+    </div>
+
+    <script src="main.js"></script>
+</body>
+
+</html>
